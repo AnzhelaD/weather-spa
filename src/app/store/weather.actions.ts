@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import {Country} from "../IWeather";
+import {Country, CountryData} from "../IWeather";
 
 export const saveUserData = createAction(
   '[Weather] Save User Data',
@@ -15,7 +15,7 @@ export const selectCountry = createAction(
 );
 export const loadCountryDataSuccess = createAction(
   '[Weather] Load Country Data Success',
-  props<{ data: any }>()
+  props<{ data: CountryData | null }>()
 );
 
 export const loadCountryDataFailure = createAction(

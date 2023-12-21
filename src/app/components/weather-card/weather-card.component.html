@@ -1,0 +1,16 @@
+<mat-card class="weather-card">
+  <mat-card-header>
+    <div mat-card-avatar class="weather-icon"></div>
+    <mat-card-title>{{ countryData.name }}</mat-card-title>
+    <mat-card-subtitle>{{ countryData.weather[0].description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Temperature: {{ countryData.main.temp }}°C</p>
+    <p>Feels Like: {{ countryData.main.feels_like }}°C</p>
+    <p>Min Temperature: {{ countryData.main.temp_min }}°C</p>
+    <p>Max Temperature: {{ countryData.main.temp_max }}°C</p>
+    <p>Pressure: {{ countryData.main.pressure }} hPa</p>
+    <p>Visibility: {{ countryData.visibility }} meters</p>
+  </mat-card-content>
+</mat-card>
+

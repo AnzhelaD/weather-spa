@@ -4,6 +4,11 @@
     <app-country-list></app-country-list>
   </div>
 
-  <div class="weather-updates-right-side">right side
-  </div>
+  <div class="weather-updates-right-side">
+    <div *ngIf="countryData$ | async as countryData">
+        <app-weather-card
+          [countryData]="countryData"
+        ></app-weather-card>
+    </div>
+</div>
 </div>

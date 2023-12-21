@@ -11,13 +11,8 @@ export const selectAllCountries = createSelector(
   selectWeatherState,
   (state) => state.countries
 );
-
-export const selectFavoriteCountries = createSelector(
+export const selectCountryData = createSelector(
   selectWeatherState,
-  (state) => state.favoriteCountries
+  (state) => state.countryData
 );
 
-export const selectNonFavoriteCountries = createSelector(
-  selectWeatherState,
-  (state) => state.countries.filter((c) => !c.favorite)
-);

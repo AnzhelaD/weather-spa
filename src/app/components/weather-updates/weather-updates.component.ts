@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CountryListComponent } from '../country-list/country-list.component';
+import {Component} from '@angular/core';
+import {selectCountryData} from "../../store/weather.selectors";
+import {Store} from "@ngrx/store";
 
 
 @Component({
@@ -7,4 +8,7 @@ import { CountryListComponent } from '../country-list/country-list.component';
   templateUrl: './weather-updates.component.html',
   styleUrls: ['./weather-updates.component.scss'],
 })
-export class WeatherUpdatesComponent {}
+export class WeatherUpdatesComponent{
+  countryData$ = this.store.select(selectCountryData);
+  constructor(private store: Store) {}
+}

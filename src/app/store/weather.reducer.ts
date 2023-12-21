@@ -1,14 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
 import * as WeatherActions from './weather.actions';
-import {Country} from "../IWeather";
+import {Country, CountryData} from "../IWeather";
 
 
 export interface WeatherState {
   username: string | null;
   email: string | null;
   countries: Country[];
-  favoriteCountries: Country[];
-
+  countryData: CountryData | null;
 }
 
 export const initialState: WeatherState = {
@@ -26,7 +25,7 @@ export const initialState: WeatherState = {
     { name: 'Switzerland', favorite: false },
     { name: 'Sweden', favorite: false },
   ],
-  favoriteCountries: []
+  countryData: null
 };
 
 export const WeatherReducer = createReducer(
@@ -34,10 +33,23 @@ export const WeatherReducer = createReducer(
   on(WeatherActions.saveUserData, (state, { username, email }) => ({ ...state, username, email })),
   on(WeatherActions.toggleFavorite, (state, { country }) => {
     const updatedCountries = addToFirst(country, state.countries);
-   console.log('updatedCountries', updatedCountries);
+
     return {
       ...state,
       countries: updatedCountries
+    };
+  }),
+  on(WeatherActions.loadCountryDataSuccess, (state, { data }) => {
+    return {
+      ...state,
+      countryData: data,
+    };
+  }),
+  on(WeatherActions.loadCountryDataFailure, (state, { error }) => {
+    return {
+      ...state,
+      countryData: null,
+      error: error,
     };
   })
 );

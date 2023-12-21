@@ -1,17 +1,32 @@
 import { Injectable } from '@angular/core';
-import {delay, Observable, of} from 'rxjs';
+import { Observable, of} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../environment";
+import {catchError, map} from "rxjs/operators";
+import {CountryData} from "../IWeather";
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
-  private apiUrl = 'https://rss.accuweather.com/rss/liveweather_rss.asp?locCode=';
+  private apiKey = environment.ApiKey;
+  private cache: { [key: string]: CountryData } = {};
 
   constructor(private http: HttpClient) {}
 
-  getWeatherRss(countryName: string): Observable<any> {
-    const url = `${this.apiUrl}${countryName}`;
-    return this.http.get(url, { responseType: 'text' });
+  getWeatherRss(countryName: string): Observable<CountryData | null> {
+    if (this.cache[countryName]) {
+      return of(this.cache[countryName]);
+    }
+
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=${this.apiKey}`;
+
+    return this.http.get<CountryData>(apiUrl).pipe(
+      catchError((error) => {
+        // Handle errors if needed
+        return of(null);
+      })
+    );
   }
 }

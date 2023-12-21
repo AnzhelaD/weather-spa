@@ -15,6 +15,8 @@ import {WeatherEffects} from "./store/weather.effects";
 import {EffectsModule} from "@ngrx/effects";
 import {CountryListModule} from "./components/country-list/country-list.module";
 import {WeatherUpdatesModule} from "./components/weather-updates/weather-updates.module";
+import {WeatherService} from "./service/weather.servise";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import {WeatherUpdatesModule} from "./components/weather-updates/weather-updates
     FooterModule,
     HeaderModule,
     MainModule,
+    HttpClientModule,
     WeatherUpdatesModule,
     StoreModule.forRoot({weather: WeatherReducer}),
     EffectsModule.forRoot([WeatherEffects]),
