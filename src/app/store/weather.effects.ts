@@ -6,7 +6,6 @@ import * as WeatherActions from './weather.actions';
 import {of} from "rxjs";
 import {WeatherService} from "../service/weather.servise";
 import {selectUsername} from "./weather.selectors";
-import {selectCountry} from "./weather.actions";
 import {select, Store} from "@ngrx/store";
 
 @Injectable()
@@ -14,7 +13,7 @@ export class WeatherEffects {
 
   saveUserData$ = createEffect(() => this.actions$.pipe(
     ofType(WeatherActions.saveUserData),
-    mergeMap(({ username, email }) => {
+    mergeMap(({ username }) => {
       this.router.navigate([username]);
       return [];
     })

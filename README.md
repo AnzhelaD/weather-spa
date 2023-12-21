@@ -1,6 +1,10 @@
-# WeatherApp
+# Weather-app
+This is desktop application which contains and displays data as for weather.
+Angular Material library was used for development
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5 and [Node](https://nodejs.org/en) version 20.10.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+## Demo Link
+https://main--majestic-cheesecake-8aba59.netlify.app/
 
 ## Development server
 
@@ -18,9 +22,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running with docker compose
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Run application `docker compose up`
+- Run application in background `docker compose up -d`
 
 ## Further help
 

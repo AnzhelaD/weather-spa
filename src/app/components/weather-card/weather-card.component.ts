@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {CountryData} from "../../IWeather";
 
 
 
@@ -8,7 +9,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./weather-card.component.scss'],
 })
 export class WeatherCardComponent {
-  @Input() countryData: any;
+  @Input() countryData: CountryData | any;
 
   constructor() {}
 }

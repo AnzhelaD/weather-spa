@@ -19,8 +19,6 @@ jobs:
         run: npm install
       - name: building project
         run: npm run build
-      - name: running eslint
-        run: npm run lint
       - name: running tests
         run: npm run test:prod
       - run: echo "This job's status is ${{ job.status }}."

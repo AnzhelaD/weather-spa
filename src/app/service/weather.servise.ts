@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../environment";
-import {catchError, map} from "rxjs/operators";
+import {catchError} from "rxjs/operators";
 import {CountryData} from "../IWeather";
 
 
@@ -23,7 +23,7 @@ export class WeatherService {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=${this.apiKey}`;
 
     return this.http.get<CountryData>(apiUrl).pipe(
-      catchError((error) => {
+      catchError(() => {
         // Handle errors if needed
         return of(null);
       })

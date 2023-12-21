@@ -9,7 +9,8 @@ import {saveUserData} from "../../store/weather.actions";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup | any;
+
+  public loginForm: FormGroup | any;
 
   constructor(private fb: FormBuilder, private store: Store) { }
 

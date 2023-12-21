@@ -20,5 +20,5 @@ export const loadCountryDataSuccess = createAction(
 
 export const loadCountryDataFailure = createAction(
   '[Weather] Load Country Data Failure',
-  props<{  error: any }>()
+  props<{  error: ErrorEvent }>()
 );

@@ -55,7 +55,7 @@ export const WeatherReducer = createReducer(
 );
 
 
-function addToFirst(obj:any, countries: any) {
+function addToFirst(obj: Country, countries: Country[]) {
   const modifyCountry= [...countries];
   const modifyObj = {...obj}
 
@@ -77,7 +77,7 @@ function addToFirst(obj:any, countries: any) {
     modifyCountry.unshift(modifyObj);
   }
 
-  modifyCountry.filter(function( element: any ) {
+  modifyCountry.filter(function( element: Country ) {
     return element !== undefined;
   });
    return modifyCountry;
