@@ -56,8 +56,8 @@ export const WeatherReducer = createReducer(
 
 
 function addToFirst(obj:any, countries: any) {
-  let modifyCountry= [...countries];
-  let modifyObj = {...obj}
+  const modifyCountry= [...countries];
+  const modifyObj = {...obj}
 
   const equality = (element: Country) => JSON.stringify(element) === JSON.stringify(obj);
   const index = modifyCountry.findIndex(equality);

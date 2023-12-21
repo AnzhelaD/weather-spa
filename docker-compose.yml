@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  weather-spa:
+    image: weather-spa:latest
+    container_name: weather-spa
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+
+networks:
+  default:
+    name: weather-network
+    external: true
+
+# create network !!!
+# docker network create weather-network
+
+# Check network, is existing
+# docker network ls
+
+# Run application
+# docker compose up
+
+# Run application in background
+# docker compose up -d
+
+# Check container
+# docker compose ps
+
+# stop container
+# docker compose stop
+
+# stop container and delete it
+# docker compose down
