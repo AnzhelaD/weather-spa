@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+  <span class="header-name">Weather-App</span>
+  <span class="header-spacer"></span>
+  <ng-container *ngIf="username$ | async as username">
+    <span class="header-username">Hello, {{ username }}</span>
+  </ng-container>
+</mat-toolbar>

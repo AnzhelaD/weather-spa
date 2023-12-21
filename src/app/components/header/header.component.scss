@@ -1,0 +1,30 @@
+
+.mat-toolbar {
+  height: 64px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.header-name {
+  margin-left: 12px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: "PlayballRegular";
+  font-size: 40px;
+}
+.header-spacer {
+  flex: 1 1 auto;
+}
+.header-username{
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.header-username:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}

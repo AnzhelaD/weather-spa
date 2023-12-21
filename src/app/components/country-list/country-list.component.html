@@ -1,0 +1,16 @@
+
+<h2>Country list:</h2>
+
+<mat-card class="card-container" *ngFor="let country of countries$ | async">
+  <button class="card-county" mat-button (click)="selectCountry(country)">
+    <mat-card-content>
+      {{country.name}}
+    </mat-card-content>
+  </button>
+  <button mat-icon-button color="warn" aria-label="favorite" (click)="toggleFavorite(country)">
+    <mat-icon [style.color]="country.favorite ? 'red' : 'white'">favorite</mat-icon>
+  </button>
+
+
+</mat-card>
+
